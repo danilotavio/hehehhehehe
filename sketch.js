@@ -1,80 +1,58 @@
 
+let cor;
+
+let posicaoHorizontal; // x
+
+let posicaoVertical; // y
+
 function setup() {
 
-createCanvas(400, 400);
+createCanvas(1000, 1000);
+
+background("orange");
+
+cor = color(random(255), random(255), random(255));
+
+posicaoHorizontal = 200;
+
+posicaoVertical = 200;
 
 }
 
 function draw() {
 
-background("white");
+fill(cor);
 
-fill("red");
+circle(posicaoHorizontal, posicaoVertical, 50);
 
-textSize(32);
+if (mouseX < posicaoHorizontal){
 
-textAlign(CENTER, CENTER);
-
-let maximo = width;
-
-let centro = width / 2;
-
-let minimo = 0;
-
-let palavra_1 = "não";
-
-let palavra_2 = "sei";
-function setup() {
-
-createCanvas(400, 400);
+posicaoHorizontal--;
 
 }
 
-function draw() {
+if (mouseX > posicaoHorizontal){
 
-background("white");
-
-fill("red");
-
-textSize(32);
-
-textAlign(CENTER, CENTER);
-
-let maximo = width;
-
-let centro = width / 2;
-
-let minimo = 0;
-
-let palavra_1 = "não";
-
-let palavra_2 = "sei";
-
-let qtd_1 = map(mouseX, centro, maximo, 0, palavra_1.length);
-
-let qtd_2 = map(mouseY, minimo, maximo, 0, palavra_2.length);
-
-let parcial_1 = palavra_1.substring(0, qtd_1);
-
-let parcial_2 = palavra_2.substring(0, qtd_2);
-
-text(parcial_1, 300, 100);
-
-text(parcial_2, 300, 350);
+posicaoHorizontal++;
 
 }
 
+if (mouseY < posicaoVertical){
 
-let qtd_1 = map(mouseX, centro, maximo, 0, palavra_1.length);
+posicaoVertical--;
 
-let qtd_2 = map(mouseY, minimo, maximo, 0, palavra_2.length);
+}
 
-let parcial_1 = palavra_1.substring(0, qtd_1);
+if (mouseY > posicaoVertical){
 
-let parcial_2 = palavra_2.substring(0, qtd_2);
+posicaoVertical++;
 
-text(parcial_1, 300, 100);
+}
 
-text(parcial_2, 300, 350);
+if (mouseIsPressed){
+
+cor = color(random(255), random(255), random(255));
+
+}
 
 }
