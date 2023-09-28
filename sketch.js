@@ -9,7 +9,7 @@ function setup() {
 
 createCanvas(1000, 1000);
 
-background("orange");
+background("white");
 
 cor = color(random(255), random(255), random(255));
 
