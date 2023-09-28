@@ -6,7 +6,7 @@ createCanvas(400, 400);
 
 function draw() {
 
-background("white");
+background("black");
 
 fill("red");
 
